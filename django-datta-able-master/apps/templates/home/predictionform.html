@@ -1,0 +1,108 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Page Blank {% endblock %} 
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+    
+    <div class="auth-wrapper">
+        <div class="auth-content">
+            <div class="auth-bg">
+                <span class="r"></span>
+                <span class="r s"></span>
+                <span class="r s"></span>
+                <span class="r"></span>
+            </div>
+            <div class="card">
+                <div class="card-body text-center">
+                    <div class="mb-4">
+                        <i class="feather icon-unlock auth-icon"></i>
+                    </div>
+                    <h3 class="mb-4">Prediction</h3>
+
+                    <div class="card-header">
+                                    <h5> Based on previous data, we will try to predict if you are from Africa who visited Arbaminch <b>Arbaminch</b></h5>
+                                </div>
+                    <br />
+                    <br />
+
+                    <form role="form" method="Post" action="">
+
+                        {% csrf_token %}                   
+                        <div class="card-header">
+                                    <h5>Age</h5>
+                                </div> 
+                                   
+                                   {{form.age_group}}
+                                   
+                                  <div class="card-header">
+                                    <h5>Who are you travelling with?</h5>
+                                </div>
+                                   
+                                    {{ form.travel_with }}            
+                                   
+                                       
+                                    <div class="card-header">
+                                    <h5>What was your purpose?</h5>
+                                </div>
+                                       
+                                    {{ form.purpose }}            
+                                    
+                                    <div class="card-header">
+                                    <h5>What was your Main Activity?</h5>
+                                </div>
+                                        
+                                    {{ form.main_activity }}
+                                    
+                                        <div class="card-header">
+                                    <h5>How did you know about the city?</h5>
+                                </div> 
+                                    
+                                    {{form.infor_source }}            
+                                    
+
+                                        <div class="card-header">
+                                    <h5>Did you have a Tour Arrangement?</h5>
+                                </div> 
+                                    {{ form.tour_arrangment }}            
+                                   
+
+                                        
+                            <div class="form-group text-left">
+                                <br>
+                                <br>
+                                <div> {% if actual < 18123 %}
+                                    Our Prediction Shows That There is a high probability the tourist was African
+                                    {%elif actual > 18123%}
+                                    Our Prediction suggests that the tourist is not african       
+                                    {%else%}
+                                    Your Prediction will be Desplayed here
+                                    {% endif %}        
+                                </div>
+                                <br>
+                                <br>
+                            <div class="checkbox checkbox-fill d-inline">
+                                <input type="checkbox" name="checkbox-fill-1" id="checkbox-fill-a1" checked="">
+                                <label for="checkbox-fill-a1" class="cr"> I understand that this result is not going to be totally accurate</label>
+                            </div>
+                        </div>
+                        
+                         <div>{{ form.errors }}</div>
+                        <button type="submit" name="submit" class="btn btn-primary shadow-2 mb-4">Submit</button>
+
+                    </form>
+                    
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}

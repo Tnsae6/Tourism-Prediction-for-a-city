@@ -1,0 +1,24 @@
+Column Name,Definition
+id,Unique identifier for each tourist
+country,The country a tourist coming  from.
+age_group,The age group of a tourist.
+travel_with,The relation of people a tourist travel with to Arba Minch
+total_female,Total number of females
+total_male,Total number of males
+purpose,The purpose of visiting  Arba Minch
+main_activity,The main activity of tourism in Arba Minch
+infor_source,The source of information about tourism in Arba Minch
+tour_arrangment,The arrangment of visiting Arba Minch
+package_transport_int,If the tour package include international transportation service
+package_accomodation,If the tour package include accommodation service
+package_food,If the tour package include food service
+package_transport_tz,If the tour package include transport service within Arba Minch 
+package_sightseeing,If the tour package include sightseeing service
+package_guided_tour,If the tour package include tour guide
+package_insurance,if the tour package include insurance service
+night_Arba_minch,Number of nights a tourist spent in night_Arba_minch
+night_Gamo_Gofa,Number of nights a tourist spent in Gamo Gofa
+payment_mode,The mode of payment for tourism service
+first_trip_tz,If it was a first  trip to Arba Minch
+most_impressing,what impressed a toursit in Arba Minch
+total_cost,The total tourist expenditure  in Etb(currency)

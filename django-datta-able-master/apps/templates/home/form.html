@@ -1,0 +1,186 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Page Blank {% endblock %} 
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+    
+    <div class="auth-wrapper">
+        <div class="auth-content">
+            <div class="auth-bg">
+                <span class="r"></span>
+                <span class="r s"></span>
+                <span class="r s"></span>
+                <span class="r"></span>
+            </div>
+            <div class="card">
+                <div class="card-body text-center">
+                    <div class="mb-4">
+                        <i class="feather icon-unlock auth-icon"></i>
+                    </div>
+                    <h3 class="mb-4">Form Table</h3>
+
+                    <div class="card-header">
+                                    <h5> Fill this form carefully about your stay in Arba Minch</h5>
+                                </div>
+                    <br />
+                    <br />
+
+                    <form role="form" method="Post" action="">
+
+                        {% csrf_token %}                   
+                        <div class="card-header">
+                                    <h5>Country of residence</h5>
+                                </div>
+                        
+                           {{form.country }}
+                        
+                       
+                                
+                                 
+                                       
+                                   <div class="card-header">
+                                    <h5>Age</h5>
+                                </div> 
+                                   
+                                   {{form.age_group}}
+                                   
+                                  <div class="card-header">
+                                    <h5>Who are you travelling with?</h5>
+                                </div>
+                                   
+                                    {{ form.travel_with }}            
+                                   
+                                       
+                                 <div class="card-header">
+                                    <h5>How many females travelled with you?</h5>
+                                </div>
+                                   
+                                        
+                                                {{ form.total_female }}
+                                        
+                                    <div class="card-header">
+                                    <h5>How many males travelled with you?</h5>
+                                </div>
+                                                                                        {{ form.total_male }}
+                                        
+                                    
+                                        <div class="card-header">
+                                    <h5>What was your purpose?</h5>
+                                </div>
+                                       
+                                    {{ form.purpose }}            
+                                    
+                                    <div class="card-header">
+                                    <h5>What was your Main Activity?</h5>
+                                </div>
+                                        
+                                    {{ form.main_activity }}
+                                    
+                                        <div class="card-header">
+                                    <h5>How did you know about the city?</h5>
+                                </div> 
+                                    
+                                    {{form.info_source }}            
+                                    
+
+                                        <div class="card-header">
+                                    <h5>Did you have a Tour Arrangement?</h5>
+                                </div> 
+                                    {{ form.tour_arrangement }}            
+                                   
+
+                                        <div class="card-header">
+                                    <h5>Did you have a Package for International Flight?</h5>
+                                </div> 
+                                    {{ form.package_transport_int }}            
+                                   
+
+                                        <div class="card-header">
+                                    <h5>Did you have a package for your Accomodations?</h5>
+                                </div>
+                                       {{ form.package_accomodation }}            
+                                    
+                                    <div class="card-header">
+                                    <h5>Did you have a package for your Food?</h5>
+                                </div>
+                                      {{form.package_food}}
+                                        <div class="card-header">
+                                    <h5>Did you have a package for your local transportation?</h5>
+                                </div>
+                                      {{form.package_transport_tz }}            
+                                    
+                                   <div class="card-header">
+                                    <h5>Did you have a package for seeing some sights?</h5>
+                                </div>
+                                        {{ form.package_sightseeing }}            
+                                    
+                                        <div class="card-header">
+                                    <h5>Did you have a package for a guided tour?</h5>
+                                </div>
+                                   
+                                       {{form.package_guided_tour }}            
+                                    
+                                    <div class="card-header">
+                                    <h5>Did you have a package for Insurance?</h5>
+                                </div>
+                                       {{ form.package_insurance }}           
+                                    
+                                        <div class="card-header">
+                                    <h5>How many Nights did you spend in Arba Minch?</h5>
+                                </div>
+                                          {{ form.night_Arba_minch }}
+                                       
+                                        <div class="card-header">
+                                    <h5>What about Gamo Gofa?</h5>
+                                </div>
+                                    
+                                         {{ form.night_Gamo_Gofa }}
+                                        
+                                        <div class="card-header">
+                                    <h5>How did you pay for your costs?</h5>
+                                </div>
+                                        {{ form.payment_mode }}            
+                                   
+                                   
+                                    <div class="card-header">
+                                    <h5>Was it your first time here?</h5>
+                                </div>
+                                        {{ form.first_trip_tz }}            
+                                    
+                                    <div class="card-header">
+                                    <h5>What impressed you most? </h5>
+                                </div>
+                                        {{ form.most_impressing }}            
+                                    
+                                    <div class="card-header">
+                                    <h5>How much did it cost?</h5>
+                                </div>
+                                       {{ form.total_cost }}
+                                        <br>
+                                        <br>
+                            <div class="form-group text-left">
+                            <div class="checkbox checkbox-fill d-inline">
+                                <input type="checkbox" name="checkbox-fill-1" id="checkbox-fill-a1" checked="">
+                                <label for="checkbox-fill-a1" class="cr"> I hereby check for my details to be used as a data for researches</label>
+                            </div>
+                        </div>
+                         <div>{{ form.errors }}</div>
+                        <button type="submit" name="submit" class="btn btn-primary shadow-2 mb-4">Submit</button>
+
+                    </form>
+
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}
